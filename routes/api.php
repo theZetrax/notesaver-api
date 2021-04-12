@@ -17,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/notes', function (Request $request) {
+    return json_encode([
+        'notes' => [
+            [
+                'id' => '1',
+                'note_title' => 'This is title',
+                'note_body' => 'This is note description'
+            ]
+        ]
+    ]);
+});
